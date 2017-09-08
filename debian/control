@@ -1,0 +1,59 @@
+Source: fairsim
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Carnë Draug <carandraug+dev@gmail.com>
+Build-Depends: debhelper (>= 10)
+Build-Depends-Indep: default-jdk-doc,
+ default-jdk-headless,
+ javahelper,
+ libij-java,
+ libij-java-doc,
+ libjtransforms-java,
+ libjtransforms-java-doc,
+ libmaven-compiler-plugin-java,
+ libmaven-javadoc-plugin-java,
+ libmaven-shade-plugin-java,
+ maven-debian-helper (>= 2.1)
+Standards-Version: 4.1.0
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/fairsim.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/fairsim.git
+Homepage: https://fairsim.github.io/
+
+Package: libfairsim-java
+Architecture: all
+Depends: ${misc:Depends}, ${java:Depends}, ${maven:Depends}
+Recommends: ${java:Recommends}
+Suggests: ${maven:OptionalDepends}, libfairsim-java-doc
+Description: Java library for SIM reconstruction
+ fairSIM is a Java library and ImageJ plugin for the reconstruction of
+ Structured Illumination Microscopy (SIM) images.  SIM is a super
+ resolution microscopy technique where widefield images with varying
+ illumination patterns are acquired and then reconstructed for
+ increased spatial resolution.  fairSIM implements the reconstruction
+ algorithm by Gustaffson and Heintzmann for the reconstruction of 2D
+ and 3D images.
+ .
+ This package provides the fairSIM java library.  See package
+ imagej-plugin-fairsim for the ImageJ plugin.
+
+Package: libfairsim-java-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}, ${maven:DocDepends}
+Suggests: ${maven:DocOptionalDepends}, libfairsim-java
+Description: documentation of libfairsim-java
+ fairSIM is a Java library and ImageJ plugin for the reconstruction of
+ Structured Illumination Microscopy (SIM) images.
+ .
+ This package contains the API documentation of libfairsim-java.
+
+Package: imagej-plugin-fairsim
+Architecture: all
+Section: science
+Depends: ${misc:Depends}, imagej, libfairsim-java
+Description: ImageJ plugin for SIM reconstruction
+ fairSIM is a Java library and ImageJ plugin for the reconstruction of
+ Structured Illumination Microscopy (SIM) images.
+ .
+ This package provides the ImageJ plugin for fairSIM.

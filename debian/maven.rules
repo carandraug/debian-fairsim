@@ -1,0 +1,3 @@
+net.imagej ij jar s/.*/debian/ * *
+com.github.wendykierp JTransforms jar s/.*/debian/ * *
+org.fairsim fairSIM jar s/.*/debian/ * *

@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=maven --with javahelper
+
+## Upstream makes use maven-compiler-plugin excludes parameter to
+## remove this file.  However, maven debian helper just replaces the
+## whole thing and there's no maven command line option to exclude
+## individual files.  Hence this workaround.
+override_dh_auto_build:
+	rm org/fairsim/linalg/JTransformsForkConnector.java
+	dh_auto_build
+
+get-orig-source:
+	uscan --download-current-version --force-download --no-symlink

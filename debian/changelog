@@ -1,0 +1,5 @@
+fairsim (1.2.0-1) UNRELEASED; urgency=medium
+
+  * Initial release (Closes: #871660)
+
+ -- Carnë Draug <carandraug+dev@gmail.com>  Thu, 10 Aug 2017 15:05:19 +0100
