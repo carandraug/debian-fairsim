@@ -1,0 +1,18 @@
+Description: mention Debian instead of the git id in the About menu
+ The about menu requests to mention version and git id when reporting
+ bugs.  Replace git id with the word debian in case users report issue
+ upstream.
+Author: Carnë Draug <carandraug+dev@gmail.com>
+Last-Update: 2017-09-27
+--- a/org/fairsim/fiji/FairSim_ImageJplugin.java
++++ b/org/fairsim/fiji/FairSim_ImageJplugin.java
+@@ -187,8 +187,7 @@
+ 	String htmlContent = 
+ 	    "<html>"+text+"<h2>Version</h2>"+
+ 	    "version: "+version.substring(0, Math.min(12, version.length()))+
+-	    "<br />git build id: "+
+-	    gitCommit.substring(0, Math.min(10, gitCommit.length()))+" "+buildType+
++	    "<br />git build id: debian"+
+ 	    "<br /><br />Please include version and git id when reporting bugs.</html>";
+ 	
+ 	JEditorPane jep = new JEditorPane("text/html", htmlContent);
